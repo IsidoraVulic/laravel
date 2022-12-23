@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-        Subject::truncate();
+        
+        
         ExamRegistration::truncate();
 
 

@@ -14,8 +14,15 @@ class AddColumnsUseridAndSubjectidToExamregistrations extends Migration
     public function up()
     {
         Schema::table('exam_registrations', function (Blueprint $table) {
-            $table->foreignId('user_id');
-            $table->foreignId('subject_id');
+            $table->foreignId('user_id')
+            ->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreignId('subject_id')
+            ->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
 
         });
     }
