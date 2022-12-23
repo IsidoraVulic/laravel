@@ -14,6 +14,7 @@ class ExamRegistration extends Model
     protected $fillable = [
         'user_id',
         'subject_id',
+        'date_of_exam',
     ];
 
     public function subject(){
