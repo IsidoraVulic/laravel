@@ -17,6 +17,8 @@ class ExamRegistration extends Model
         'date_of_exam',
     ];
 
+    protected $guarded = ['id'];
+
     public function subject(){
         return $this->belongsTo(Subject::class);
     }

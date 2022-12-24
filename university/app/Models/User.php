@@ -46,4 +46,6 @@ class User extends Authenticatable
     public function examregistrations(){
         return $this->hasMany(ExamRegistration::class);
     }
+
+   
 }
