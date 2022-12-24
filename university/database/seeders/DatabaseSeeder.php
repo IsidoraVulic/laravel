@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\ExamRegistration;
 use App\Models\User;
 use App\Models\Subject;
+use App\Models\SubjectCategory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,17 +29,29 @@ class DatabaseSeeder extends Seeder
         
 
         $user = User::factory()->create();
+
+
+        $cat1 = SubjectCategory::create([
+            'name' => 'Mandatory'
+        ]);
+
+        $cat2 = SubjectCategory::create([
+            'name' => 'Voluntary'
+        ]);
         
         $sub1 = Subject::create([
             'name' => "Mathematics",
+            'category_id' => $cat1->id,
         ]);
 
         $sub2 = Subject::create([
             'name' => "Geography",
+            'category_id' => $cat1->id,
         ]);
 
         $sub3 = Subject::create([
             'name' => "English Language",
+            'category_id' => $cat2->id,
         ]);
 
         $examreg1 = ExamRegistration::create([
